@@ -28,7 +28,7 @@ if st.button('Prediksi Tagihan'):
     st.success(f'Prediksi Tagihan Listrik: Rp {prediksi:,.0f}')
 
 # Tampilkan dataset
-st.subheader('Data Latih')
+st.subheader('Dataset')
 st.write(df)
 
 # Visualisasi data dan garis regresi
