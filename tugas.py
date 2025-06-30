@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 import matplotlib.pyplot as plt
 
-st.title('Prediksi Tagihan Listrik Rumah Berbasis Regresi Linier')
+st.title('Prediksi Tagihan Listrik Rumah')
 # Penjelasan model
 st.subheader("""
 Tentang Model Prediksi
