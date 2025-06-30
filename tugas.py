@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 
 st.title('Prediksi Tagihan Listrik Rumah Berbasis Regresi Linier')
 # Penjelasan model
-st.header("""
-### Tentang Model Prediksi
+st.subheader("""
+Tentang Model Prediksi
 
 Model ini menggunakan **Regresi Linier** untuk memprediksi tagihan listrik rumah tangga berdasarkan jumlah penggunaan listrik (dalam kWh).
 
@@ -21,7 +21,7 @@ Dimana:
 Dengan memasukkan nilai kWh, pengguna akan langsung mendapatkan prediksi jumlah tagihan listrik.
 """)
 
-st.header('Input Penggunaan Listrik')
+st.subheader('Input Penggunaan Listrik')
 kwh = st.number_input('Masukkan Penggunaan Listrik (kWh)', min_value=0.0, step=0.1)
 
 # Dataset contoh
