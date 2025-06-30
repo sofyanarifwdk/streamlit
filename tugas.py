@@ -38,10 +38,11 @@ model = LinearRegression()
 model.fit(X, y)
 
 # Prediksi
+prediksi = None  # Awal: belum ada prediksi
 if st.button('Prediksi Tagihan'):
     prediksi = model.predict(np.array([[kwh]]))[0]
     st.success(f'Prediksi Tagihan Listrik: Rp {prediksi:,.0f}')
-
+    
 # Tampilkan dataset
 st.subheader('Dataset')
 st.write(df)
@@ -50,6 +51,7 @@ st.write(df)
 st.subheader('Visualisasi Data dan Garis Regresi')
 
 fig, ax = plt.subplots()
+# Data asli
 ax.scatter(df['kWh'], df['Tagihan'], color='blue', label='Data Asli')
 
 # Garis regresi
@@ -57,8 +59,13 @@ x_range = np.linspace(df['kWh'].min(), df['kWh'].max(), 100)
 y_pred = model.predict(x_range.reshape(-1, 1))
 ax.plot(x_range, y_pred, color='red', label='Garis Regresi')
 
+# Titik prediksi pengguna
+if prediksi is not None:
+    ax.scatter(kwh, prediksi, color='green', s=100, label='Prediksi Anda', zorder=5)
+
 ax.set_xlabel('Penggunaan Listrik (kWh)')
 ax.set_ylabel('Tagihan Listrik (Rp)')
 ax.legend()
 
 st.pyplot(fig)
+
